@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación sobre Utilización de CPU en Bases de Datos - Oracle</title>
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Contenedor Principal --- */
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* --- Cabecera --- */
+        .main-header {
+            background-color: #252525;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 4px solid #f80000;
+        }
+
+        .main-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .main-header .logo span {
+            color: #f80000;
+        }
+
+        /* --- Contenido Principal --- */
+        .content-card {
+            background: #fff;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .content-card h1 {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .content-card h2 {
+            font-size: 22px;
+            color: #f80000;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .meta-data {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+        
+        strong {
+            color: #111;
+        }
+
+        /* --- Tabla de Datos --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table thead {
+            background-color: #333;
+            color: #fff;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        table tbody tr {
+            background-color: #fff;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* --- Pie de Página --- */
+        .main-footer {
+            background: #252525;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        
+        .main-footer a {
+            color: #f80000;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">ORACLE<span>.</span></a>
+            <nav>
+                </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="content-card">
+            <h1>Análisis de Rendimiento: Utilización de CPU en Bases de Datos</h1>
+            <div class="meta-data">
+                Publicado por Oracle Cloud Infrastructure Research | Fecha: 12 de mayo de 2018
+            </div>
+            
+            <p>En Oracle, estamos comprometidos con la investigación continua para optimizar el rendimiento y la eficiencia de las infraestructuras de nuestros clientes. Como parte de este esfuerzo, nuestro equipo ha llevado a cabo un estudio para analizar los factores clave que influyen en la utilización de la CPU en diferentes entornos de bases de datos.</p>
+
+            <p>El objetivo de esta investigación es determinar cómo las características de hardware asignadas y la arquitectura subyacente de la base de datos impactan directamente en el consumo de recursos computacionales. Este entendimiento es crucial para la planificación de capacidad, la optimización de costos y la garantía de un rendimiento estable y predecible.</p>
+            
+            <h2>Metodología y Recopilación de Datos</h2>
+            <p>Se realizó un estudio controlado en un conjunto de bases de datos heterogéneas, variando tanto el número de CPUs asignadas como el tipo de base de datos. Se monitoreó la carga de trabajo estandarizada para registrar el porcentaje promedio de utilización de la CPU. A continuación, se presentan los datos recopilados de la muestra inicial. Estos son los tipos de bases de datos que van del 1 al 3.</p>
+               <p> 1: Autonomous Data Warehouse - Dedicated (ADW-D) </p>
+               <p> 2: Autonomous Transaction Processing - Shared (ATP-S) </p>
+               <p> 3: Oracle Database - Bare Metal (ODB-BM) </p>
+
+            <h2>Resultados de la Muestra de Datos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Base de Datos</th>
+                        <th>CPUs Asignadas </th>
+                        <th>Tipo de BD </th>
+                        <th>Utilización CPU (%) (Y)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BD1</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>BD2</td>
+                        <td>8</td>
+                        <td>2</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>BD3</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>BD4</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>BD5</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>BD6</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>BD7</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>BD8</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>68</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Análisis Preliminar y Conclusiones</h2>
+            <p>Los datos preliminares sugieren una correlación positiva entre el número de CPUs asignadas y el porcentaje de utilización, aunque esta relación no es lineal y parece estar modulada por el tipo de base de datos. Por ejemplo, las bases de datos de <strong>Tipo 2</strong> tienden a mostrar una utilización ligeramente superior con un mayor número de CPUs en comparación con las de <strong>Tipo 1</strong> y <strong>Tipo 3</strong> bajo cargas similares.</p>
+            <p>Estos hallazgos iniciales refuerzan la importancia de un enfoque multifactorial para la gestión del rendimiento. El próximo paso de nuestra investigación será aplicar modelos de regresión múltiple para cuantificar con precisión la influencia de cada variable y desarrollar un modelo predictivo para la planificación de recursos en Oracle Cloud Infrastructure (OCI).</p>
+
+        </article>
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2025 Oracle y/o sus filiales. Todos los derechos reservados.</p>
+        <p><a href="#">Términos de Uso</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+
+</body>
+</html>
